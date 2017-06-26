@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button  menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <img *ngIf='navParams.data.picture' alt="logo" height="40"   src="{{navParams.data.picture}}" > 
+    <ion-title *ngIf='!navParams.data.picture' >{{navParams.data.nome}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="content-system" padding>
+  <div *ngIf="platform.is('tablet')">
+    <ion-row wrap *ngIf="systems">
+      <ion-col col-4 *ngFor="let system of systems">
+        <ion-card [ngClass]="{'card-system': system.Enabled, 'card-system-disabled': !system.Enabled }" (click)="system.UsaMarca=='true' ? toggleDetails(system) : ( system.Enabled ? getTicket(system.Mnemonico ,-1) : messageLock(system))">
+          <div *ngIf="!system.showDetails">
+            <ion-card-content>
+              <ion-icon *ngIf="system.UsaMarca=='true'" class="pull-right" name="arrow-round-forward"></ion-icon>          
+              <i primary class="icon-system fa fa-{{system.Imagem}} fa-lg"></i>
+              <h2>{{system.Nome}}</h2>
+              <hr>
+              <p>{{system.Descricao}}</p>
+            </ion-card-content>
+          </div>
+          <div *ngIf="system.showDetails">
+            <ion-card-header>
+              <ion-icon class="pull-left" name="arrow-round-back"></ion-icon> {{system.Nome}}
+            </ion-card-header>         
+            <ion-card-content>
+              <ion-scroll scrollY="true">
+                <ion-list *ngIf="system.UsaMarca=='true' && system.showDetails" >
+                  <div *ngFor="let sistemaCliente of system.SistemaClientes">
+                    <button  ion-item *ngIf="sistemaCliente.Enabled" (click)="getTicket(system.Mnemonico, sistemaCliente.IdMarca)">
+                      <i primary class="fa fa-{{sistemaCliente.Marca.Imagem}} fa-lg"></i>
+                      {{sistemaCliente.Marca.Nome}}
+                    </button>  
+                  </div>
+                </ion-list>
+              </ion-scroll>
+            </ion-card-content>
+          </div>
+        </ion-card>        
+      </ion-col>
+    </ion-row>    
+  </div>
+
+  <div *ngIf="!platform.is('tablet')">
+    <ion-list *ngIf="systems">
+      <div *ngFor="let system of systems">
+        <ion-item (click)="system.UsaMarca=='true' ? toggleDetails(system) : ( system.Enabled ? getTicket(system.Mnemonico ,-1) : messageLock(system))">
+          <ion-avatar item-start>
+            <i primary class="fa fa-{{system.Imagem}} fa-lg"></i>
+          </ion-avatar>
+          <h2>{{system.Nome}}</h2>
+          <p>{{system.Descricao}}</p>
+          <ion-icon [color]="system.Enabled ? 'secondary' : 'primary'" item-right [name]="system.UsaMarca=='true' ? system.icon : ( system.Enabled ? 'arrow-forward' : 'lock')"></ion-icon>
+        </ion-item>
+        <ion-list class="child-list" *ngIf="system.UsaMarca=='true' && system.showDetails" >
+          <div *ngFor="let sistemaCliente of system.SistemaClientes">
+            <ion-item class="child-list-item" *ngIf="sistemaCliente.Enabled" (click)="getTicket(system.Mnemonico, sistemaCliente.IdMarca)" >          
+              <ion-avatar item-start *ngIf="sistemaCliente.Marca">
+                <i primary class="fa fa-{{sistemaCliente.Marca.Imagem}} fa-lg"></i>
+              </ion-avatar>
+              <h2>{{sistemaCliente.Marca.Nome}}</h2>
+              <p>{{sistemaCliente.Descricao}}</p>
+              <ion-icon color="secondary" item-right name="arrow-forward"></ion-icon>
+            </ion-item>
+          </div>
+        </ion-list>
+      </div>
+    </ion-list>
+  </div>
+
+
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-content  scroll="false">
+  <form (submit)="doLogin()">
+
+    <div class="splash-info">
+      <div class="splash-logo"></div>
+    </div>
+    <div padding>
+      <ion-list>
+
+        <ion-item>
+          <ion-label fixed>{{ 'USERNAME' | translate }}</ion-label>
+          <ion-input type="login" [(ngModel)]="account.login" name="login"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" [(ngModel)]="account.senha" name="senha"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        </div>
+      </ion-list>
+    </div>
+    <div class="splash-brand"></div>
+  </form>
+</ion-content>

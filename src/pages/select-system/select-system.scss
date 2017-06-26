@@ -1,0 +1,76 @@
+page-select-system {
+
+    .content-system {
+        background-image: url('../assets/img/bg_bw.png') !important;
+        background-repeat: no-repeat !important;
+        background-position: bottom right !important;
+    }
+
+    .child-list {
+        background-color: #EEE !important;
+        margin: -1px 0 0px 30px;
+    }
+    .child-list-item {
+        background-color: #EEE !important;
+    }
+    .splash-logo {
+
+        margin: 15% auto auto auto;
+        background: url('../assets/img/logo.png') no-repeat transparent;
+        background-size: 100%;
+        width: 300px;
+        height: 150px;
+    }
+
+    .splash-brand {
+        margin: 20px auto auto auto;
+        background: url('../assets/img/brand.png') no-repeat transparent;
+        background-size: 100%;
+        width: 150px;
+        height: 100px;
+    }
+
+    .card-system{
+        color: color($colors, primary);
+        float: left;
+        text-align: center;
+        margin: 10px;
+        height: 200px;
+        .icon-system {
+            color: color($colors, primary);
+            margin-top: 10px;
+            font-size: 50px;
+            height: 60px;
+        }
+
+        ion-card-header{
+            padding: 10px;
+            background-color: lighten(color($colors, primary),70%);
+        }
+        ion-scroll { 
+            height: 150px;
+        }
+    }
+
+    .card-system-disabled{
+        color: lighten(color($colors, primary),50%);
+        float: left;
+        text-align: center;
+        margin: 10px;
+        height: 200px;
+        .icon-system {
+            color: lighten(color($colors, primary),50%);
+            margin-top: 10px;
+            font-size: 50px;
+            height: 60px;
+        }
+
+        h2 {
+            color: lighten(color($colors, primary),50%);
+        }
+
+        p{
+            color: lighten(color($colors, primary),50%);
+        }
+    }
+}

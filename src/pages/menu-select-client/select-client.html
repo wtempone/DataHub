@@ -1,0 +1,19 @@
+<ion-menu [content]="content" side="left">
+  <ion-content class="list-menu">
+    <div class="img-datahub"> </div>
+    <ion-list>
+      <ion-item [ngClass]="{'list-menu-item-selected' : client.Selected, 'list-menu-item' : !client.Selected}" *ngFor="let client of clients" (click)="openClient(client)">
+        <h2>{{client.Nome}}</h2>
+        <p>{{client.Titulo}}</p>
+      </ion-item>
+
+      <ion-item class="list-menu-item" (click)="logout()">
+        <h2>Sair</h2>
+        <p>Sair do Sistema</p>
+      </ion-item>
+      
+    </ion-list>    
+  </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>
