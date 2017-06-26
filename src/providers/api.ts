@@ -4,13 +4,13 @@ import 'rxjs/add/operator/map';
 
 export const URLs =  {
   //Localhost    
-  SCLSite: 'http://localhost:6626',
-  CentralLogin: "http://localhost:56018",
-  DataHub: "http://localhost:60869"
+  //SCLSite: 'http://localhost:6626',
+  //CentralLogin: "http://localhost:56018",
+  //DataHub: "http://localhost:60869"
   
-  //SCLSite: null,
-  //CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  //DataHub: "http://profileservices.dev.wmccann.com"
+  SCLSite: null,
+  CentralLogin: "http://centralloginservices.dev.wmccann.com",
+  DataHub: "http://profileservices.dev.wmccann.com"
 }
 
 @Injectable()
