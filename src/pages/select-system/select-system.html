@@ -72,5 +72,9 @@
     </ion-list>
   </div>
 
-
+  <div *ngIf="!systems"  >
+    <p class="message">Selecione um cliente no menu ao lado.</p>
+    <div class="splash-logo"></div>
+    <div class="splash-brand"></div>
+  </div>
 </ion-content>
