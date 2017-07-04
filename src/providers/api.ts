@@ -8,9 +8,14 @@ export const URLs =  {
   //CentralLogin: "http://localhost:56018",
   //DataHub: "http://localhost:60869"
   
+  //SCLSite: null,
+  //CentralLogin: "http://centralloginservices.dev.wmccann.com",
+  //DataHub: "http://profileservices.dev.wmccann.com"
+
   SCLSite: null,
-  CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  DataHub: "http://profileservices.dev.wmccann.com"
+  CentralLogin: "http://centralloginservices.qas.wmccann.com",
+  DataHub: "http://profileservices.qas.wmccann.com"
+
 }
 
 @Injectable()
