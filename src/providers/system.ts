@@ -18,8 +18,6 @@ export class System {
       content: 'Obtendo lista de sistemas.'
     });
     loading.present();
-
-
     seq
       .map(res => res.json())
       .subscribe(res => {

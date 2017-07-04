@@ -28,6 +28,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectSystemPage } from "../pages/select-system/select-system";
+import { FlashCardComponent } from '../components/flash-card/flash-card';
 
 
 export function HttpLoaderFactory(http: Http) {
@@ -51,7 +52,8 @@ export function provideSettings(storage: Storage) {
     SettingsPage,
     WelcomePage,
     SelectClientPage,
-    SelectSystemPage
+    SelectSystemPage,
+    FlashCardComponent    
   ],
   imports: [
     BrowserModule,

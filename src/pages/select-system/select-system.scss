@@ -38,7 +38,7 @@ page-select-system {
         float: left;
         text-align: center;
         margin: 10px;
-        height: 200px;
+        height: 230px;
         .icon-system {
             color: color($colors, primary);
             margin-top: 10px;
@@ -50,8 +50,15 @@ page-select-system {
             padding: 10px;
             background-color: lighten(color($colors, primary),70%);
         }
+
         ion-scroll { 
-            height: 150px;
+            height: 180px;
+        }
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            height: 100px;
         }
     }
 
@@ -60,7 +67,7 @@ page-select-system {
         float: left;
         text-align: center;
         margin: 10px;
-        height: 200px;
+        height: 230px;
         .icon-system {
             color: lighten(color($colors, primary),50%);
             margin-top: 10px;

@@ -52,12 +52,16 @@ export class SelectSystemPage {
     changeClient(idCliente,idUsuario) {
       this.systemInfo = { 
         idCliente: idCliente,
-        idUsuario: idUsuario
+        idUsuario: idUsuario,
+        dispositivo: 4 // Somente dispositivos móveis(Celulares e Tablets)
     }
 
     this.system.get(this.systemInfo).subscribe((resp) => {
       if (resp.statusText = 'OK'){        
         this.systems = this.system._systems;
+        
+        this.systems = this.systems.filter(obj => obj.MostraHub);
+
         for (let system of this.systems) {
           if (system.UsaMarca == 'true') {
             system.showDetails = false;

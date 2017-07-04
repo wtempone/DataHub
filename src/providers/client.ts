@@ -13,7 +13,7 @@ export class Client {
   }
 
   get(clientInfo: any) {
-    let seq = this.api.get(URLs.DataHub, 'Cliente/GetByUser', clientInfo).share();
+    let seq = this.api.get(URLs.DataHub, 'Cliente/GetByUserDevice', clientInfo).share();
 
     let loading = this.loadingCtrl.create({
       content: 'Carregando menu de clientes.'

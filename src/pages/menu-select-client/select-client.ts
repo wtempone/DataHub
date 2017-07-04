@@ -31,7 +31,10 @@ export class SelectClientPage {
       this.loginErrorString = value;
     })
 
-    let clientInfo = { idUsuario: this.user._user.IdUsuario }
+    let clientInfo = { 
+      idUsuario: this.user._user.IdUsuario, 
+      dispositivo: 4 // Somente dispositivos móveis(Celulares e Tablets)
+     }
 
     this.client.get(clientInfo).subscribe((resp) => {
       if (resp.statusText == 'OK'){

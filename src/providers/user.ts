@@ -13,6 +13,7 @@ export class User {
   }
 
   login(accountInfo: any) {
+    
     let seq = this.api.get(URLs.CentralLogin, 'CentralLogin/GetLogin', accountInfo).share();
 
     let loading = this.loadingCtrl.create({
