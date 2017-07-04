@@ -10,11 +10,11 @@ export const URLs =  {
   
   //SCLSite: null,
   //CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  //DataHub: "http://profileservices.dev.wmccann.com"
+  //DataHub: "http://profileservice.dev.wmccann.com"
 
   SCLSite: null,
   CentralLogin: "http://centralloginservices.qas.wmccann.com",
-  DataHub: "http://profileservices.qas.wmccann.com"
+  DataHub: "http://profileservice.qas.wmccann.com"
 
 }
 
