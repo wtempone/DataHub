@@ -48,7 +48,7 @@ export class SelectClientPage {
               if (URLs.SCLSite) {
                 client.Picture = URLs.SCLSite + '/Content/themes/logo-clientes/' + client.CaminhoAppend;
               } else {
-                client.Picture = client.url + '/Content/themes/logo-clientes/' + client.CaminhoAppend;
+                client.Picture = client.url.replace('https://','http://') + '/Content/themes/logo-clientes/' + client.CaminhoAppend;
               }
             }
           }
