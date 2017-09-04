@@ -29,7 +29,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SelectSystemPage } from "../pages/select-system/select-system";
 import { FlashCardComponent } from '../components/flash-card/flash-card';
-
+import { AppVersion } from '@ionic-native/app-version';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -90,7 +92,10 @@ export function provideSettings(storage: Storage) {
     InAppBrowser,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AppVersion,
+    FileTransfer, FileTransferObject,
+    File
   ]
 })
 export class AppModule { }

@@ -8,6 +8,7 @@ import { User } from '../../providers/user';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectClientPage } from "../menu-select-client/select-client";
 //import { SelectSystemPage } from "../select-system/select-system";
+import { AppVersion } from '@ionic-native/app-version';
 
 
 @Component({
@@ -22,15 +23,19 @@ export class LoginPage {
 
   // Our translated text strings
   private loginErrorString: string;
+  public versionNumber: string;
 
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    private appVersion: AppVersion) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
+
+    this.appVersion.getVersionNumber().then(version => this.versionNumber = version);    
   }
 
   presentError() {

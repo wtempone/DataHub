@@ -6,16 +6,19 @@ export const URLs =  {
   //Localhost    
   //SCLSite: 'http://localhost:6626',
   //CentralLogin: "http://localhost:56018",
-  //DataHub: "http://localhost:60869"
+  //DataHub: "http://localhost:60869",
+  //ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
   
-  //SCLSite: null,
-  //CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  //DataHub: "http://profileservice.dev.wmccann.com"
-
   SCLSite: null,
-  CentralLogin: "http://centralloginservices.qas.wmccann.com",
-  DataHub: "http://profileservice.qas.wmccann.com"
+  CentralLogin: "http://centralloginservices.dev.wmccann.com",
+  DataHub: "http://profileservice.dev.wmccann.com",
+  ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
 
+  //SCLSite: null,
+  //CentralLogin: "http://centralloginservices.qas.wmccann.com",
+  //DataHub: "http://profileservice.qas.wmccann.com",
+  //ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
+  
 }
 
 @Injectable()
@@ -55,5 +58,9 @@ export class Api {
 
   patch(url: string, endpoint: string, body: any, options?: RequestOptions) {
     return this.http.put(url + '/api/' + endpoint, body, options);
+  }
+
+  version() {
+    return this.http.get(URLs.ServerVersion);
   }
 }
