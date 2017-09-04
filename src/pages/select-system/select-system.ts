@@ -25,7 +25,6 @@ export class SelectSystemPage {
     closebuttoncaption:'Fechar'
   }
 
-
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public toastCtrl: ToastController,    

@@ -8,20 +8,22 @@ import { AppVersion } from '@ionic-native/app-version';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
-/**
- * The Welcome Page is a splash page that quickly describes the app,
- * and then directs the user to create an account or log in.
- * If you'd like to immediately put the user onto a login/signup page,
- * we recommend not using the Welcome page.
-*/
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
   private versionNumber: string;
-  private fileTransfer: FileTransferObject = this.transfer.create();
+  private fileTransfer: FileTransferObject;
+
+  inAppBrowserOptions: {
+    location:'no',
+    clearcache: 'yes',
+    enableviewportscale:'yes',
+    closebuttoncaption:'Fechar'
+  };
   
   constructor(public navCtrl: NavController, 
     public modalCtrl: ModalController,
@@ -30,7 +32,8 @@ export class WelcomePage {
     private api: Api,
     private platform: Platform,
     private transfer: FileTransfer, 
-    private file: File
+    private file: File,
+    public inAppBrowser : InAppBrowser    
   ) { }
 
   ionViewDidLoad() {
@@ -81,21 +84,21 @@ export class WelcomePage {
     console.log(this.platform);
     console.log(this.platform);
     if (this.platform.is('android')) {
-      console.log('plataforma android identificada');
       this.installAndroid();
     }
     if (this.platform.is('ios')) {
-      window.open('https://forecastappdev.wmccann.com/DataHubApp/DataHub.api');
+      this.installIOS();
+      //window.open('itms-services://?action=download-manifest&url=https://forecastappdev.wmccann.com/DataHubApp/manifest.plist');
+      
     }
     console.log('Atualizacao Selecionada');
   }
 
   
   installAndroid() {
- 
-    const url = 'https://forecastappdev.wmccann.com/DataHubApp/DataHub-WMcCann.apk';
-
-    this.fileTransfer.download(url, this.file.externalRootDirectory + 'download/DataHub-WMcCann.apk').then((entry) => {
+    this.fileTransfer = this.transfer.create();
+    const url = 'https://forecastappdev.wmccann.com/DataHubApp/DataHub.apk';
+    this.fileTransfer.download(url, this.file.externalRootDirectory + 'download/DataHub.apk').then((entry) => {
       
       console.log(entry.toURL());
 
@@ -129,7 +132,7 @@ export class WelcomePage {
 
 
   installIOS() {
-
+      this.inAppBrowser.create('itms-services://?action=download-manifest&url=https://forecastappdev.wmccann.com/DataHubApp/manifest.plist', "_system", this.inAppBrowserOptions);
   }
   
   showLogin() {
