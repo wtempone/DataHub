@@ -12,7 +12,6 @@ export const URLs =  {
   SCLSite: null,
   CentralLogin: "http://centralloginservices.dev.wmccann.com",
   DataHub: "http://profileservice.dev.wmccann.com",
-  ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
 
   //SCLSite: null,
   //CentralLogin: "http://centralloginservices.qas.wmccann.com",
@@ -58,9 +57,5 @@ export class Api {
 
   patch(url: string, endpoint: string, body: any, options?: RequestOptions) {
     return this.http.put(url + '/api/' + endpoint, body, options);
-  }
-
-  version() {
-    return this.http.get(URLs.ServerVersion);
   }
 }

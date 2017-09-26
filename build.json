@@ -1,0 +1,28 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "my-release-key.keystore",
+      "alias": "DataHub",
+      "password": "12345678",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "my-release-key.keystore",
+      "alias": "DataHub",
+      "password": "12345678",
+      "keystoreType": ""
+    }
+  },
+  "ios": {
+    "debug": {
+      "codeSignIdentity": "iPhone Development",
+      "developmentTeam": "N37L6B6VW8",
+      "packageType": "development"
+    },
+    "release": {
+      "codeSignIdentity": "iPhone Distribution",
+      "developmentTeam": "N37L6B6VW8",
+      "packageType": "enterprise"
+    }
+  }
+}

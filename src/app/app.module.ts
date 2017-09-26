@@ -32,6 +32,7 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
 import { AppVersion } from '@ionic-native/app-version';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { VersionProvider } from '../providers/version';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -95,7 +96,8 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AppVersion,
     FileTransfer, FileTransferObject,
-    File
+    File,
+    VersionProvider
   ]
 })
 export class AppModule { }
