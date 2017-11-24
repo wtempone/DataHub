@@ -16,8 +16,8 @@ Distribution manifest information
 Nome
 DataHub #
 App URL
-https://forecastappdev.wmccann.com/DataHubApp/DataHub.ipa #
+https://app.wmccann.com/DataHubApp/DataHub.ipa #
 Display Image URL
-https://forecastappdev.wmccann.com/DataHubApp/icon.png #
+https://app.wmccann.com/DataHubApp/icon.png #
 FUll Display Image URL
-https://forecastappdev.wmccann.com/DataHubApp/icon.512x512.png #
+https://app.wmccann.com/DataHubApp/icon.512x512.png #

@@ -3,7 +3,7 @@ import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { NavController, ModalController, AlertController, Platform } from "ionic-angular";
 import { AppVersion } from "@ionic-native/app-version";
-import { Api } from "./api";
+import { URLs, Api } from "./api";
 import { FileTransfer, FileTransferObject } from "@ionic-native/file-transfer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { File } from '@ionic-native/file';
@@ -12,7 +12,6 @@ import { File } from '@ionic-native/file';
 export class VersionProvider {
   private versionNumber: string;
   private fileTransfer: FileTransferObject;
-  private serverVersionURL: string = "https://forecastappdev.wmccann.com/DataHubApp/versao.json";
 
   inAppBrowserOptions: {
     location: 'no',
@@ -34,8 +33,8 @@ export class VersionProvider {
   ) { }
 
   serverVersion() {
-    console.log('url:'+this.serverVersionURL);
-    return this.http.get(this.serverVersionURL, new RequestOptions());
+    console.log('url:'+ URLs.ServerVersion);
+    return this.http.get(URLs.ServerVersion, new RequestOptions());
   }
 
   versionChanged() {
@@ -50,6 +49,7 @@ export class VersionProvider {
       })
     })
   }
+  
   showConfirmInstall() {
     this.serverVersion().map(server => server.json())
       .subscribe(server => {

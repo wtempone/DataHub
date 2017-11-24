@@ -20,7 +20,7 @@
               <i primary class="icon-system fa fa-{{system.Imagem}} fa-lg"></i>
               <h2>{{system.Nome}}</h2>
               <hr>
-              <p>{{system.Descricao}}</p>
+              <p>{{system.SistemaClientes[0].Descricao}}</p>
             </ion-card-content>
           </div>
           <div *ngIf="system.showDetails">
@@ -53,7 +53,7 @@
             <i primary class="fa fa-{{system.Imagem}} fa-lg"></i>
           </ion-avatar>
           <h2>{{system.Nome}}</h2>
-          <p>{{system.Descricao}}</p>
+          <p>{{system.SistemaClientes[0].Descricao}}</p>
           <ion-icon [color]="system.Enabled ? 'secondary' : 'primary'" item-right [name]="system.UsaMarca=='true' ? system.icon : ( system.Enabled ? 'arrow-forward' : 'lock')"></ion-icon>
         </ion-item>
         <ion-list class="child-list" *ngIf="system.UsaMarca=='true' && system.showDetails" >

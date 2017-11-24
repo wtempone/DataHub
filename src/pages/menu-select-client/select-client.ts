@@ -39,6 +39,7 @@ export class SelectClientPage {
     this.client.get(clientInfo).subscribe((resp) => {
       if (resp.statusText == 'OK'){
         this.clients = this.client._clients;
+        console.log('this.clients =>',this.clients);
         for (let client of this.clients) {
           if (client.CaminhoAppend != null) {
             if (client.CaminhoAppend.indexOf('~') >= 0 ) {
@@ -76,7 +77,8 @@ export class SelectClientPage {
         cli.Selected = false;
       }
     }
-    this.nav.setRoot(SelectSystemPage, {idCliente : client.IdCliente, idUsuario: this.user._user.IdUsuario, nome:client.Nome, picture: client.Picture })
+    console.log('client =>', client)
+    this.nav.setRoot(SelectSystemPage, {idCliente : client.IdCliente, idUsuario: this.user._user.IdUsuario, nome:client.Nome, picture: client.Picture , marcas: client.Marcas})
   }
 
   presentError() {

@@ -9,14 +9,19 @@ export const URLs =  {
   //DataHub: "http://localhost:60869",
   //ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
   
-  SCLSite: null,
-  CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  DataHub: "http://profileservice.dev.wmccann.com",
-
   //SCLSite: null,
-  //CentralLogin: "http://centralloginservices.qas.wmccann.com",
-  //DataHub: "http://profileservice.qas.wmccann.com",
-  //ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
+  //CentralLogin: "http://centralloginservices.dev.wmccann.com",
+  //DataHub: "http://profileservice.dev.wmccann.com",
+
+  // SCLSite: null,
+  // CentralLogin: "http://centralloginservices.qas.wmccann.com",
+  // DataHub: "http://profileservice.qas.wmccann.com",
+  // ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
+  
+  SCLSite: null,
+  CentralLogin: "https://centralloginservices.wmccann.com",
+  DataHub: "https://profileservice.wmccann.com",
+  ServerVersion: "https://app.wmccann.com/DataHubApp/versao.json"
   
 }
 
