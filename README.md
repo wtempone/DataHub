@@ -5,7 +5,7 @@ keytool -genkey -v -keystore my-release-key.keystore -alias DataHub -keyalg RSA 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore platforms/android/build/outputs/apk/android-release-unsigned.apk DataHub
 rm -rf platforms/android/build/outputs/apk/DataHub.apk
 $ANDROID_HOME/build-tools/25.0.2/zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/DataHub.apk
-
+C:\Users\william.tempone\AppData\Local\Android\sdk\build-tools\26.0.2\zipalign -v 4 platforms/android/build/outputs/apk/android-release-unsigned.apk platforms/android/build/outputs/apk/DataHub.apk
 comando para instalar em device
 adb -d install platforms/android/build/outputs/apk/DataHub.apk
 
@@ -21,3 +21,6 @@ Display Image URL
 https://app.wmccann.com/DataHubApp/icon.png #
 FUll Display Image URL
 https://app.wmccann.com/DataHubApp/icon.512x512.png #
+
+Disabilitar cors do google
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --user-data-dir="C:/Chrome dev session" --disable-web-security

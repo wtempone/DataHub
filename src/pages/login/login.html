@@ -1,4 +1,4 @@
-<ion-content  scroll="false">
+<ion-content scroll="false">
   <form (submit)="doLogin()">
 
     <div class="splash-info">
@@ -17,14 +17,19 @@
           <ion-input type="password" [(ngModel)]="account.senha" name="senha"></ion-input>
         </ion-item>
 
-        <div padding>
+        <div padding-top>
           <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
         </div>
       </ion-list>
     </div>
+    
     <div class="splash-brand"></div>
 
   </form>
-  <div text-center class="versao-text">Versão</div>
-  <div text-center class="versao-text">{{ versionNumber }}</div>
+  <div *ngIf='versionNumber'>
+    <div text-center class="versao-text">Versão</div>
+    <div text-center class="versao-text">{{ versionNumber }}</div>
+  </div>
+  <div *ngIf="ambiente" text-center class="versao-text">{{ ambiente }}</div>
+  
 </ion-content>

@@ -3,25 +3,30 @@ import { Http, RequestOptions, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 export const URLs =  {
-  //Localhost    
-  //SCLSite: 'http://localhost:6626',
-  //CentralLogin: "http://localhost:56018",
-  //DataHub: "http://localhost:60869",
-  //ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
+  // Localhost  
+  //  Ambiente: 'localhost',  
+  //  SCLSite: 'http://localhost:6626',
+  //  CentralLogin: "http://localhost:56018",
+  //  DataHub: "http://localhost:62290",
+  //  ServerVersion: "https://appdev.wmccann.com/DataHubApp/versao.json"
+    
+  Ambiente: 'Desenvolvimento',
+  SCLSite: null,
+  CentralLogin: "http://centralloginservices.dev.wmccann.com",
+  DataHub: "http://profileservice.dev.wmccann.com",
+  ServerVersion: "https://appdev.wmccann.com/DataHubApp/versao.json"
   
-  //SCLSite: null,
-  //CentralLogin: "http://centralloginservices.dev.wmccann.com",
-  //DataHub: "http://profileservice.dev.wmccann.com",
-
+  // Ambiente: 'Homologação',  
   // SCLSite: null,
   // CentralLogin: "http://centralloginservices.qas.wmccann.com",
   // DataHub: "http://profileservice.qas.wmccann.com",
-  // ServerVersion: "https://forecastappdev.wmccann.com/DataHubApp/versao.json"
+  // ServerVersion: "https://appqasve.wmccann.com/DataHubApp/versao.json"
   
-  SCLSite: null,
-  CentralLogin: "https://centralloginservices.wmccann.com",
-  DataHub: "https://profileservice.wmccann.com",
-  ServerVersion: "https://app.wmccann.com/DataHubApp/versao.json"
+  // Ambiente: '',  
+  // SCLSite: null,
+  // CentralLogin: "https://centralloginservices.wmccann.com",
+  // DataHub: "https://profileservice.wmccann.com",
+  // ServerVersion: "https://app.wmccann.com/DataHubApp/versao.json"
   
 }
 

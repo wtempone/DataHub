@@ -39,6 +39,10 @@ export class WelcomePage {
   ) { }
 
   ionViewDidLoad() {
+    if (!this.platform.is('cordova')) {
+      this.showLogin();    
+      return;      
+    }
     this.version.versionChanged().then(changed => changed.subscribe(value => {
       console.log(value);
       if (value) {

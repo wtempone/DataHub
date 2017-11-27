@@ -38,7 +38,7 @@ export class VersionProvider {
   }
 
   versionChanged() {
-    return this.platform.ready().then(() => {
+    return this.platform.ready().then(() => {      
       console.log('platform is ready');
       return this.appVersion.getVersionNumber().then(versaoLocal => {
         console.log('app version is :'+versaoLocal);
